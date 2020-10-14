@@ -46,10 +46,19 @@ public class ShowProfile extends EasyGraphics {
 		// ybase indicates the position on the y-axis where the columns should start
 	
 		int x = MARGIN,y;
-
+		//setter fargen lik blå
+		setColor(0, 0, 255);
+		
 		// TODO - START
-
-		throw new UnsupportedOperationException(TODO.method());
+		//for loops som regner ut hver strek for hver elevation
+		for(int i = 0; i < gpspoints.length; i++) {
+			//setter y lik maxhøgde minus elevation for å få riktig y kordinat
+			y = MAXBARHEIGHT - (int)gpspoints[i].getElevation()*2;
+			//tegner linjen
+			drawLine(x, MAXBARHEIGHT, x, y);
+			//setter neste x +=3
+			x += 3;
+		}
 	
 		// TODO - SLUTT
 	}
